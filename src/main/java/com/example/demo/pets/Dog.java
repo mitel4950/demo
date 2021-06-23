@@ -8,6 +8,12 @@ public class Dog {
     public String HelloWorld() {
         return "HelloWorld";
     }
+
+    public Dog()
+    {
+
+    }
+
     public Dog(String str){
         this.str = str;
     }

@@ -1,9 +1,8 @@
 package com.example.demo;
 
-import com.example.demo.pets.Cat;
-import com.example.demo.pets.Dog;
-import com.example.demo.pets.Pat;
-import org.springframework.beans.factory.annotation.Value;
+import com.example.demo.pets.*;
+import com.example.demo.сompany.Address;
+import com.example.demo.сompany.Company;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -17,7 +16,7 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
         ApplicationContext context;
 
-        int num = 3;
+        int num = 6;
         switch (num)
         {
             case 0:
@@ -43,11 +42,30 @@ public class DemoApplication {
                 Dog dog = context.getBean("dog", Dog.class);
                 System.out.println(dog.HelloWorld());
                 break;
+
+
+
+
+            case 4:
+                context = new AnnotationConfigApplicationContext(Config.class);
+                Address address = new Address("High Street", 1000);
+                Company company = new Company(address);
+
+                Company company1 = new Company(context.getBean(Address.class));
+                break;
+            case 5:
+                context = new AnnotationConfigApplicationContext(Config.class);
+                Tiger tiger = (Tiger) context.getBean("tiger", new Pat("Тигрёнок"));
+                Lion lion = context.getBean(Lion.class);
+                System.out.println(tiger.getPat().getName());
+                System.out.println(lion.getPat().getName());
+
+                break;
+            case 6:
+                context = new AnnotationConfigApplicationContext(Config.class);
+                Config.Animal animal = context.getBean(Config.Animal.class);
+                break;
         }
-
-
-
-
 
     }
 
