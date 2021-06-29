@@ -5,6 +5,7 @@ public class Cat {
     private String breed;
     @Resource(name = "Pat")
     private Pat pat;
+
     public Cat (String breed){
         this.breed = breed;
     }

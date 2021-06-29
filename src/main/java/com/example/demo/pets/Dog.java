@@ -5,16 +5,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class Dog {
     String str;
+
     public String HelloWorld() {
         return "HelloWorld";
     }
 
-    public Dog()
-    {
+    public Dog() {
 
     }
 
-    public Dog(String str){
+    public Dog(String str) {
         this.str = str;
     }
 

@@ -23,4 +23,8 @@ public class Engine {
         this.cylinderCount = cylinderCount;
     }
 
+    public int getCylinderCount() {
+        return cylinderCount;
+    }
+
 }
